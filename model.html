@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attack on Titan Series</title>
+  <style>
+    body {
+      font-family: 'Arial Black', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(30,30,30,0.9) 100%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .social-logos {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .social-logos img {
+      width: 30px;
+      margin-left: 10px;
+    }
+    .mute-button, .fullscreen-button {
+      background-color: transparent;
+      color: #fff;
+      padding: 5px 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .mute-button:hover, .fullscreen-button:hover {
+      background-color: rgba(255, 0, 0, 0.8);
+      transform: scale(1.2);
+    }
+    .mute-button {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+    }
+    .fullscreen-button {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+    .hero {
+      height: 50vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero video {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 20px;
+      opacity: 0.5;
+      transition: opacity 0.5s ease;
+    }
+    .overlay:hover {
+      opacity: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .series {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding: 20px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+    }
+    .series-item {
+      flex: 0 0 calc(25% - 20px);
+      padding: 20px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.8) 100%);
+    }
+    .series-item:hover {
+      transform: scale(1.1);
+      background: linear-gradient(to bottom, rgba(80,0,0,0.8) 0%,rgba(255,0,0,0.8) 100%);
+    }
+    .series-item h2, .series-item p {
+      color: #fff;
+    }
+    .series-item img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    @media screen and (max-width: 768px) {
+      .series-item {
+        flex: 0 0 calc(50% - 20px);
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .series-item {
+        flex: 0 0 calc(100% - 20px);
+      }
+    }
+    .logo {
+    width: 100px; /* Adjust width as needed */
+    transition: transform 0.3s, filter 0.3s;
+    cursor: pointer;
+  }
+
+  .logo:hover {
+    transform: scale(1.1); /* Zoom in on hover */
+    filter: brightness(1.2); /* Adjust brightness on hover */
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Attack on Titan Series</h1>
+    <div class="social-logos">
+      <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScMs2bZosAaHZfgqtQGGAGnvanawbxoY7big&usqp=CAU" alt="facebook"></a>
+      <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQlTxCKPramnoC6lIE_9xEJLT4NBFiE7GSqQ&usqp=CAU" alt="twitter"></a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <video id="video" autoplay controls loop muted onclick="toggleOverlay()">
+      <source src="C:\Users\mohanapriya\Downloads\Attack On Titan - All Trailers [60FPS] (Outdated).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay" id="overlay">
+      Click to watch preview
+    </div>
+    <button class="mute-button" onclick="toggleMute()">Mute/Unmute</button>
+    <button class="fullscreen-button" onclick="toggleFullscreen()">Fullscreen</button>
+  </div>
+
+  <div class="container">
+    <div class="series">
+      <!-- Add other series items here -->
+      <div class="series-item">
+        <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10873160_b_v8_aa.jpg" alt="Season 1 Cover">
+        <h2>Attack on Titan (Season 1)</h2>
+        <p>The first season of Attack on Titan. It follows the story of Eren Yeager and his friends who join the military to fight against the Titans.</p>
+      </div>
+      <div class="series-item">
+        <img src="https://thereviewingfloor.files.wordpress.com/2017/04/image.jpeg" alt="Season 2 Cover">
+        <h2>Attack on Titan (Season 2)</h2>
+        <p>The second season continues the story from the first season, revealing more about the Titans and the mysteries surrounding them.</p>
+      </div>
+      <div class="series-item">
+        <img src="https://w0.peakpx.com/wallpaper/862/749/HD-wallpaper-aot-season3-anime-attack-on-titan.jpg" alt="Season 3 Part 1 Cover">
+        <h2>Attack on Titan (Season 3 Part 1)</h2>
+        <p>Season 3 delves deeper into the history of the Titans and unveils shocking revelations about the world and its characters.</p>
+      </div>
+      <div class="series-item">
+        <img src="https://cdn.myanimelist.net/images/anime/1517/100633.jpg" alt="Season 3 Part 2 Cover">
+        <h2>Attack on Titan (Season 3 Part 2)</h2>
+        <p>The second part of Season 3 continues to explore the mysteries surrounding the Titans and humanity's struggle for survival.</p>
+      </div>
+      <div class="series-item">
+        <img src="https://static.wikia.nocookie.net/shingekinokyojin/images/b/b3/Attack_on_Titan_The_Final_Season.jpg/revision/latest?cb=20200529093654" alt="Season 4 Part 1 Cover">
+        <h2>Attack on Titan (Season 4 Part 1)</h2>
+        <p>The final season follows the battle between Marley and Paradis as the truth about the Titans is finally revealed.</p>
+      </div>
+      <div class="series-item">
+        <img src="https://www.therampage.net/wp-content/uploads/2022/05/dac363972d628a7009e04fdeb9d7104a1641869274_main-600x900.jpg" alt="Season 4 Part 2 Cover">
+        <h2>Attack on Titan (Season 4 Part 2)</h2>
+        <p>Season 4 Part 2 continues the intense conflict between Marley and Paradis as new revelations come to light.</p>
+      </div>
+      <div class="series-item">
+        <img src="https://www.denofgeek.com/wp-content/uploads/2022/04/FPbgN6-XwAsJfar.jpeg?resize=732,1024" alt="Season 4 Part 3 Part 1 Cover">
+        <h2>Attack on Titan (Season 4 Part 3 Part 1)</h2>
+        <p>The first part of Season 4 Part 3 delves deeper into the complex political landscape and the struggles of the characters.</p>
+      </div>
+      <div class="series-item">
+        <img src="https://pic4.iqiyipic.com/image/20230303/f4/3d/a_100436099_m_601_en_m5_260_360.jpg" alt="Season 4 Part 3 Part 2 Cover">
+        <h2>Attack on Titan (Season 4 Part 3 Part 2)</h2>
+        <p>The final part of Season 4 continues the epic saga as the characters face their ultimate challenges and revelations.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleOverlay() {
+      var overlay = document.getElementById('overlay');
+      overlay.style.display = 'none';
+    }
+
+    function toggleMute() {
+      var video = document.getElementById('video');
+      video.muted = !video.muted;
+    }
+
+    function toggleFullscreen() {
+      var video = document.getElementById('video');
+      if (!document.fullscreenElement) {
+        video.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  </script>
+
+</body>
+</html>
